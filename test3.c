@@ -97,14 +97,14 @@ int main(){
     pthread_t input;
     pthread_t logging;
     
-    while(1){
+   // while(1){
       pthread_create(&input,NULL,check_time,&i);
       pthread_create(&sample, NULL, currently_time,&j);
       pthread_create(&logging,NULL,save_time,&i);
       pthread_join(input,(void**)&ptr);
       pthread_join(logging,(void**)&ptr);
       pthread_join(sample, (void**)&ptr);
-      sleep(2);
-    }
+   //   sleep(2);
+   // }
    return 0;
 }
